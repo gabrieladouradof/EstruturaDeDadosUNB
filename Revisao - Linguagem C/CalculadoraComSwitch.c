@@ -8,7 +8,7 @@ int main()
     int valor1, valor2, resultado;
     char operador;
     
-     printf("Digite a operação:\n");
+    printf("Digite a operação:\n");
     scanf("%c", &operador);
     
     printf("Digite o primeiro e o segundo valor:\n");
