@@ -1,30 +1,30 @@
-#include <stdio.h>
-
-
-int separa (char v[], int p, int r, long int *qt_trocas) {
-    char c = v[r]; // pivô, mudei p char e mesma coisa no quicksort
-    char t;
-    int j = p;
-    for (int k = p; k < r; ++k)
-        if (v[k] <= c) {
-            t = v[j];
-            v[j] = v[k];
-            v[k] = t;
-            ++j;
-            (*qt_trocas)++;
+    int trocas = 0, j , i;
+    char chave;
+    for (i = 1; i < tamanho; i++)
+    {
+        chave = vetor[i];
+        j = i-1;
+        printf("%d, %d, %c\n", i, j, chave);
+        while (j >= 0 && vetor[j] > chave)
+        {
+            printf("%s\n", vetor);
+            vetor[j+1] = vetor[j];
+            printf("%s\n", vetor);
+            j--; trocas++;
         }
-    t = v[j];
-    v[j] = v[r];
-    v[r] = t;
-    (*qt_trocas)++;
-    return j;
+        vetor[j+1]= chave;
+        printf("%s\n\n", vetor);
+    }
+    return trocas;
 }
-void quicksort (char v[], int p, int r, long int *qt_trocas)
-{
-   if (p < r) {
-      int j = separa (v, p, r, qt_trocas);
-      quicksort (v, p, j - 1, qt_trocas);
-      quicksort (v, j + 1, r, qt_trocas);
-    } 
 }
+// Qual o valor de R?
+// Qual o valor de nome?
+// Qual tipo de ordenacao da funcao q4?
 
+int main(){
+    char nc[] = "frança";
+    int res = Q5(nc, 6); // last nome, qtd de letras last nome;
+    printf("resposta = %d\n\n", res);
+    return 0;
+}
